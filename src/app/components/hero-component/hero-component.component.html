@@ -1,0 +1,30 @@
+<div class="home-container">
+    <h1>Welcome to Our Application</h1>
+    
+    <div *ngIf="isLoggedIn; else notLoggedIn">
+      <h2>Hello, {{ firstName }}!</h2>
+      <p>You are now logged in and can access all features.</p>
+      <div class="features">
+        <div class="feature-card">
+          <h3>Feature 1</h3>
+          <p>Description of feature 1</p>
+        </div>
+        <div class="feature-card">
+          <h3>Feature 2</h3>
+          <p>Description of feature 2</p>
+        </div>
+        <div class="feature-card">
+          <h3>Feature 3</h3>
+          <p>Description of feature 3</p>
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #notLoggedIn>
+      <p>Please <a routerLink="/login">sign in</a> to access all features.</p>
+      <div class="preview-section">
+        <h2>App Preview</h2>
+        <p>This is a preview of our amazing application. Sign in to see more!</p>
+      </div>
+    </ng-template>
+  </div>

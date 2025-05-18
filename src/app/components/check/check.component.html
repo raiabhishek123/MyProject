@@ -1,0 +1,12 @@
+<p style="background-color: aliceblue;">check works!</p>
+<input type="text" [(ngModel)]="name" placeholder="enter your name">
+<button (click)="updateValue()" >Update value</button>
+<input type="checkbox" [(ngModel)]="isCheck"  placeholder="checkbox">
+<input type="radio"[(ngModel)]="gender" value="male">
+<h1 *ngIf="display">{{name}}</h1>
+<div [ngSwitch]="color">
+<p *ngSwitchCase="'red'" style="background-color: red;">Red color</p>
+<p *ngSwitchCase="'green'" style="background-color: green;">Green color</p>
+<p *ngSwitchDefault >Default </p>
+</div>
+<router-outlet />

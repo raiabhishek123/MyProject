@@ -1,0 +1,10 @@
+<header class="header">
+  <div class="logo">My Angular App</div>
+  <nav class="nav">
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login" routerLinkActive="active">Sign In</a></li>
+      <li *ngIf="isLoggedIn"><a (click)="logout()" class="logout">Logout</a></li>
+    </ul>
+  </nav>
+</header>

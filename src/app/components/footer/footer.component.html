@@ -1,0 +1,60 @@
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Company Information -->
+    <div class="footer-section company-info">
+      <h3>{{ companyName }}</h3>
+      <p class="address">{{ companyAddress }}</p>
+      <p class="contact-info">
+        <a href="mailto:{{ companyEmail }}">{{ companyEmail }}</a><br>
+        {{ companyPhone }}
+      </p>
+    </div>
+    
+    <!-- Quick Links -->
+    <div class="footer-section site-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li *ngFor="let link of navigationLinks">
+          <a [routerLink]="link.url">{{ link.name }}</a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Additional Resources -->
+    <div class="footer-section resources">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/support">Support</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-service">Terms of Service</a></li>
+      </ul>
+    </div>
+    
+    <!-- Newsletter Signup -->
+    <div class="footer-section newsletter">
+      <h3>Stay Updated</h3>
+      <p>Subscribe to our newsletter for the latest updates.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter your email" aria-label="Email for newsletter">
+        <button type="submit">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Social Media Icons -->
+  <div class="social-links">
+    <a *ngFor="let social of socialLinks" 
+       [href]="social.url" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       [attr.aria-label]="social.name">
+      <i class="fa fa-{{ social.icon }}"></i>
+    </a>
+  </div>
+  
+  <!-- Copyright -->
+  <div class="copyright">
+    <p>&copy; {{ currentYear }} {{ companyName }}. All rights reserved.</p>
+  </div>
+</footer>
